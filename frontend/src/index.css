@@ -107,3 +107,33 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+/* Define the smooth scrolling animation */
+@keyframes scroll {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+/* Apply the animation to the container */
+.auto-scroll {
+  overflow: hidden;
+  position: relative;
+  height: 250px; /* Adjust based on content */
+}
+
+.auto-scroll .scroll-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  animation: scroll 600s linear infinite;
+  will-change: transform;
+}
+
+/* Pause scrolling when hovered */
+.auto-scroll:hover .scroll-content {
+  animation-play-state: paused;
+}

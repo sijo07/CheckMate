@@ -1,14 +1,18 @@
-import { Button } from "@/components/ui/button";
+import { Outlet } from "react-router-dom";
+import Navigation from "./pages/auth/navigation";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-function App() {
+const App = () => {
   return (
     <>
-      <h1 className="text-3xl font-bold underline font-Raleway ">
-        Hello world!
-      </h1>
-      <Button variant="default">Button</Button>
+      <ToastContainer />
+      <Navigation />
+      <main>
+        <Outlet />
+      </main>
     </>
   );
-}
+};
 
 export default App;
